@@ -14,7 +14,7 @@ class FloatingTypeTest {
         //  Please write down the answer directly.
         //
         // <!--start
-        final int expected = Integer.MAX_VALUE;
+        final int expected = 2;
         // --end-->
 
         assertEquals(expected, integer);
@@ -43,7 +43,7 @@ class FloatingTypeTest {
         //  Please write down you answer directly.
         //
         // <!--start
-        final int expected = Integer.MAX_VALUE;
+        final int expected = 2;
         // --end-->
 
         assertEquals(expected, integer);
@@ -60,7 +60,7 @@ class FloatingTypeTest {
         //  The reference is here:
         //  https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html#round-double-
         // <!--start
-        final long rounded = Long.MAX_VALUE;
+        final long rounded = Math.round(floatingPointNumber);
         // --end-->
 
         assertEquals(3L, rounded);
@@ -71,7 +71,8 @@ class FloatingTypeTest {
         // TODO:
         //  please implement the method to pass the test. It is better you call existing
         //  API rather than implemented yourself.
-        throw new RuntimeException("Not implemented");
+//        throw new RuntimeException("Not implemented");
+        return Double.isNaN(realNumber);
     }
 
     @SuppressWarnings("unused")
@@ -79,6 +80,7 @@ class FloatingTypeTest {
         // TODO:
         //  please implement the method to pass the test. It is better you call existing
         //  API rather than implemented yourself.
-        throw new RuntimeException("Not implemented");
+//        throw new RuntimeException("Not implemented");
+        return Double.isInfinite(realNumber);
     }
 }
