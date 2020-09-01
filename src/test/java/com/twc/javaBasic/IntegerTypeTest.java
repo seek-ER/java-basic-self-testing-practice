@@ -25,8 +25,8 @@ class IntegerTypeTest {
         // Hint:
         //  If you want some reference please see page 59 of "Core Java Vol 1", section 3.5.2.
         // <!--start
-        final double expectedResult1 = Double.NaN;
-        final double expectedResult2 = Double.NaN;
+        final double expectedResult1 = 0.0;
+        final double expectedResult2 = 3.0;
         // --end-->
 
         assertEquals(expectedResult1, result1, +1.0E-05);
@@ -41,7 +41,7 @@ class IntegerTypeTest {
         // TODO:
         //  please modify the following lines to pass the test. Please refer to page 60 of "Core Java Vol 1", section 3.5.3.
         // <!--start
-        final short expected = 0;
+        final short expected = 17767;
         // --end-->
 
         assertEquals(expected, smallerInteger);
@@ -57,8 +57,8 @@ class IntegerTypeTest {
         //  please modify the following code to pass the test. You should write the
         //  result directly.
         // <--start
-        final int expectedCurrentInteger = 0;
-        final int expectedResult = 0;
+        final int expectedCurrentInteger = 4;
+        final int expectedResult = 3;
         // --end-->
 
         assertEquals(expectedCurrentInteger, integer);
@@ -75,8 +75,8 @@ class IntegerTypeTest {
         //   please modify the following code to pass the test. You should write the
         //   result directly.
         // <--start
-        final int expectedCurrentInteger = 0;
-        final int expectedResult = 0;
+        final int expectedCurrentInteger = 4;
+        final int expectedResult = 4;
         // --end-->
 
         assertEquals(expectedCurrentInteger, integer);
@@ -92,6 +92,10 @@ class IntegerTypeTest {
         //  Java library contains method to do this. If you meet some difficulties
         //  here please refer to the following document:
         //  https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html#addExact-int-int-
-        throw new RuntimeException("Not implemented");
+        int result = left + right;
+        if (((left ^ result) & (right ^ result)) < 0){
+            throw new ArithmeticException("int overflow");
+        }
+        return result;
     }
 }
